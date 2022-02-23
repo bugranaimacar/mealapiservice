@@ -1,0 +1,15 @@
+{
+  "name": "yemek",
+  "version": "0.0.1",
+  "description": "yemek listesi botu",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "bugranaimacar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "xlsx": "^0.18.1"
+  }
+}
