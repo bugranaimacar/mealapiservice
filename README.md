@@ -1,2 +1,2 @@
-# mealapiservice
-Reading DOCX File for meallist
+# Meal API Service
+Reading DOCX File for getting meallist.
