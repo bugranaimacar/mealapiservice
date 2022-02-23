@@ -1,7 +1,7 @@
 const express = require('express');
 const { yemeklisteyukle, zamangetir } = require('./yemekgetir.js');
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 
 app.set('trust proxy', true);
