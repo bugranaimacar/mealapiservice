@@ -1,2 +1,2 @@
 # Meal API Service
-Reading DOCX File for getting meallist.
+Reading XLSX File for getting meallist.
