@@ -4,6 +4,7 @@ var sheet_name_list = workbook.SheetNames;
 var yemeklistejson = JSON.parse(JSON.stringify(workbook.Sheets[sheet_name_list[0]]));
 var yemekliste = JSON.stringify(workbook.Sheets[sheet_name_list[0]]);
 let ts = new Date();
+let tw = new Date(ts.getTime() + (24 * 60 * 60 * 1000));
 
 var weekday=new Array(8);
 weekday[0]="Sunday";
@@ -30,7 +31,7 @@ months[10]="November";
 months[11]="December";
 
 let bugununstringi = weekday[parseInt(ts.getDay())] + ", " + months[ts.getMonth()] + " " + ts.getDate() + ", " + ts.getFullYear();
-let yarininstringi = weekday[parseInt(ts.getDay())+1] + ", " + months[ts.getMonth()] + " " + parseInt(ts.getDate()+1) + ", " + ts.getFullYear();
+let yarininstringi = weekday[parseInt(tw.getDay())] + ", " + months[tw.getMonth()] + " " + parseInt(tw.getDate()) + ", " + tw.getFullYear();
 let yemekanahtar = new Array(8)
 let yemekstringi = "";
 let yazilacakstring;
@@ -64,6 +65,3 @@ module.exports.yemeklisteyukle = function(zaman){
     }
     return yemekstringi || "Bu gün için tanımlanmış bir yemek bulunamadı!";
 }
-
-
-
