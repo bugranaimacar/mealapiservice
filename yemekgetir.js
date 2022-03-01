@@ -6,6 +6,7 @@ var yemekliste = JSON.stringify(workbook.Sheets[sheet_name_list[0]]);
 let ts = new Date();
 let tw = new Date(ts.getTime() + (24 * 60 * 60 * 1000));
 
+
 var weekday=new Array(8);
 weekday[0]="Sunday";
 weekday[1]="Monday";
@@ -30,8 +31,17 @@ months[9]="October";
 months[10]="November";
 months[11]="December";
 
-let bugununstringi = weekday[parseInt(ts.getDay())] + ", " + months[ts.getMonth()] + " " + ts.getDate() + ", " + ts.getFullYear();
-let yarininstringi = weekday[parseInt(tw.getDay())] + ", " + months[tw.getMonth()] + " " + parseInt(tw.getDate()) + ", " + tw.getFullYear();
+let bugunungunu, yariningunu;
+
+function isDigit(val) {
+    return String(+val).charAt(0) == val;
+  }
+
+  if(isDigit(ts.getDate())) bugunungunu = '0' + ts.getDate();
+  if(isDigit(tw.getDate())) yariningunu = '0' + tw.getDate();
+
+let bugununstringi = weekday[parseInt(ts.getDay())] + ", " + months[ts.getMonth()] + " " + bugunungunu + ", " + ts.getFullYear();
+let yarininstringi = weekday[parseInt(tw.getDay())] + ", " + months[tw.getMonth()] + " " + yariningunu + ", " + tw.getFullYear();
 let yemekanahtar = new Array(8)
 let yemekstringi = "";
 let yazilacakstring;
