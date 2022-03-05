@@ -1,5 +1,4 @@
 const express = require('express');
-const { yemeklisteyukle, zamangetir } = require('./yemekgetir.js');
 const app = express();
 const port = 3000;
 
@@ -17,6 +16,7 @@ app.get('/', (req, res) => {
 })
 
 app.get ('/api/yemekgetir/:date', (req, res) => {
+  const { yemeklisteyukle, zamangetir } = require('./yemekgetir.js');
   res.status(200).send({
       school: 'Aydın Özel Büyük Uğur Anadolu Lisesi',
       date: zamangetir(req.params.date),
