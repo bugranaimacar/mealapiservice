@@ -37,8 +37,10 @@ function isDigit(val) {
     return String(+val).charAt(0) == val;
   }
 
-  if(isDigit(ts.getDate())) bugunungunu = '0' + ts.getDate();
-  if(isDigit(tw.getDate())) yariningunu = '0' + tw.getDate();
+  if(isDigit(ts.getDate())) { bugunungunu = '0' + ts.getDate(); }
+  else{ bugunungunu = ts.getDate(); }
+  if(isDigit(ts.getDate())) { yariningunu = '0' + tw.getDate(); }
+  else{ yariningunu = tw.getDate(); }
 
 let bugununstringi = weekday[parseInt(ts.getDay())] + ", " + months[ts.getMonth()] + " " + bugunungunu + ", " + ts.getFullYear();
 let yarininstringi = weekday[parseInt(tw.getDay())] + ", " + months[tw.getMonth()] + " " + yariningunu + ", " + tw.getFullYear();
