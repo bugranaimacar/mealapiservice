@@ -1,6 +1,6 @@
 const express = require('express');
-const app = express();
-const port = 3000;
+const app = express()
+const port = 3000
 
 
 app.set('trust proxy', true);
@@ -17,10 +17,11 @@ app.get('/', (req, res) => {
 
 app.get ('/api/yemekgetir/:date', (req, res) => {
   const { yemeklisteyukle, zamangetir } = require('./yemekgetir.js');
-  res.status(200).send({
+  try { var yemeklerim = yemeklisteyukle(req.params.date); } catch(e) { yemeklerim = 'Yemek listesi bulunamadı!'; }
+      res.status(200).send({
       school: 'Aydın Özel Büyük Uğur Anadolu Lisesi',
       date: zamangetir(req.params.date),
-      meallist: yemeklisteyukle(req.params.date)
+      meallist: yemeklerim
   });
 })
 
